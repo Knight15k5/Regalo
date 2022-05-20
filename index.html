@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Regalito</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">Regalito</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide active" src="./video/v1.m4v" autoplay muted loop></video>
+        <video class="video-slide" src="./video/v2.m4v" autoplay muted loop></video>
+        <video class="video-slide" src="./video/v3.m4v" autoplay muted loop></video>
+
+        <div class="content">
+            <h1>Hello.<br> <span>Adri</span></h1>
+            <p>Sé que ahora último no estamos coincidiendo mucho en nuestros horarios :c, pero sé que llegrá el momento para volver a vernos.</p>
+        </div>
+
+        <div class="content">
+            <h1>Siendo<br><span>Sincero</span></h1>
+            <p>Cuando nos conocimos, no pensé en que me abriría emocionalmente. Usualmente soy una persona muy fría con aquellos que empiezo a conocer, pero conforme
+            fuimos conversando y saliendo, algo en mi dijo "Es ella con la que quiero estar" y aún mantengo ese objetivo jejeje </p>
+        </div>
+
+        <div class="content">
+            <h1>El que quiere.<br><span>Puede</span></h1>
+            <p>Como dije antes, tal ves nuestros tiempos no coinciden, pero creo que el que quiere siempre está dispuesto a dar soluciones y encontrar una forma de sobrellevar esas dificultades.
+            Yo sé que a veces estamos muy ocupados, tu trabajando y yo con los estudios y el trabajo, pero siempre intento demostrar mi interés al saber como estas.
+            Tal ves no sea mucho en comparación a otras personas, pero creeme que la mayoría de las veces rondas en mi mente y este pequeño presente es prueba de ello :D</p>
+        </div>
+
+        <div class="media-icons">
+            <a href="https://youtu.be/SiZcBmTuSH0"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        //Javacript for responsive navigation menu
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+        //Javacript for video slider navigation
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
+</body>
+</html>
